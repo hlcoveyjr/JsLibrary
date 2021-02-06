@@ -1,0 +1,27 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<title name="My-Test" value="My Test"></title>
+<script type="text/javascript" src="./jsObject.js"></script>
+<script type="text/javascript" src="./jsCalendar.js"></script>
+<script type="text/javascript">
+	var x = new jsCalendar("MyCal");
+	x.show();
+	function toggle(obj){
+		var btn = document.getElementById("btn");
+		if(x.isVisible) { 
+			x.hide(); 
+			btn.text = "Show";
+		} else { 
+			x.show(); 
+			btn.text = "Hide";
+		}
+	}
+</script>
+</head>
+<body>
+<form>
+<a name="btn" id="btn" href="javascript:toggle(x)" >Show</a>
+<div id="MyCal" class="calendar"></div>
+</form>
+</body>
