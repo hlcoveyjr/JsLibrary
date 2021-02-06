@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+        <script type="text/javascript">
+            var input = "Thursday, July 28th, 2011 The LibraryThing programming quiz!" +
+                "Want to apply for one of the technical jobs at LibraryThing?" +
+                "Take the test below.If you can do it in under five minutes, let’s talk!" +
+                "Background. I’ve been spending a lot of my time going through(read: “drowning in”) " +
+                "applications for our 2 - 3 open technical jobs.And I’ve been conducting a few interviews. " +
+                "The latter has demonstrated to me again the value of asking applicants to write code, especially simple code, " +
+                "during the interviews.That interviews should involve simple code is now common wisdom in programming circles. " +
+                "The story is that a high percentage of programmers, even people with impressive resumes, “just can’t code.” " +
+                "Asked to do the simplest things—problems a good coders could solve as fast they could write—some spend ten or " +
+                "twenty minutes before they get an answer, or fail entirely. (See discussion by Jeff Attwood and Joel Spolsky.) " +
+                "I don’t go as far as others here. I think a lot of “slow coders” are probably excellent employees, making up for it " +
+                "in other areas.Some projects don’t need speed.Some people just need to spend more time programming; " +
+                "everyone was a slow programmer some time.But I know from experience that slow coders don’t work at LibraryThing. " +
+                "They don’t fit the LibraryThing development culture.“Simple code” is critical.When I first started interviewing " +
+                "I’d ask people to solve hard problems.This didn’t work.As Spolsky’s famous “The Guerrilla Guide to Interviewing” argues, " +
+                "however, simple problems are just as good, or better.Simple problems test simple skills, and simple skills are the " +
+                "basis of complex ones.A programmer who struggles to loop through a bunch of words will be at sea performing far more complex tasks. " +
+                "If you can’t boil water your Toad in the Hole is likely to come out wrong.";
+
+
+            function run() {
+                var output = document.getElementById("txtOutput");
+                var report = "";
+
+                var cleanInput = input.replace(/[^\w\d\s\’]/gi, " ").split(/[\ ]+/gi).filter(x => x !== '');
+                var max = maxLength(cleanInput);
+                var len = cleanInput.length;
+                for (var i = 0; i < len; i++) {
+                    report += cleanInput[i] + " ";
+                }
+                report += "<br/><br/>The paragragh contains " + len + " words broken down as such:<br/>";
+
+                for (var i = 0; i <= max; i++) {
+                    var x = countWordsByLength(cleanInput, i);
+
+                    report += x > 0 ? "<br/>" + x + " words of " + i + " length." : "";
+                }
+
+                output.innerHTML = report;
+            }
+
+            function maxLength(input) {
+                var x = 0;
+                for (var i = 0; i < input.length; i++) {
+                    if (input[i].length > x) x = input[i].length;
+                }
+                return x;
+            }
+            function countWordsByLength(input, len) {
+                var x = 0;
+                for (var i=0; i < input.length; i++) {
+                    if (input[i].length === len) x++;
+                }
+                return x;
+            }
+
+        </script>
+</head>
+<body">
+    <input type="button" value="Go" onclick="run()" />
+    <p id="txtOutput"></p>
+</body>
+</html>
