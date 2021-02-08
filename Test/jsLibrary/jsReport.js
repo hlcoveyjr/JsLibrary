@@ -34,7 +34,7 @@ script.
 REQUIREMENTS:
 None
 *****************************************************************************/
-import { splitStrToArray, setOrDefault, isNullOrEmpty, toTitle } from "./jsHelpers.js";
+import { splitStrToArray, setOrDefault, isNullOrEmpty, toTitle } from "./jsHelper.js";
 
 //#region OBJECTS
 /******************************************************************************

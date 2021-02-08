@@ -111,8 +111,8 @@
         <div id="rpt" style="display:block;max-width:80em;"></div>
     </form>
     <script type="module">
-        import { ImageList, toolButtons } from './Scripts/jsImage.js';
-        import { RptObject } from './Scripts/jsReport.js';
+        import { ImageList, toolButtons } from './jsLibrary/jsImage.js';
+        import { RptObject } from './jsLibrary/jsReport.js';
         let imgList = new ImageList("imgList", images);
         let box = document.querySelector("#pictureBox");
         imgList.cursor = 2;

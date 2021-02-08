@@ -2,7 +2,7 @@
  * jsImage.js                                     author:  Harvey L. Covey, Jr.
  * Object-oriented sudoku application             created: Jan 31, 2021
  *****************************************************************************/
-import { setOrDefault, isNullOrEmpty, toTitle } from './jsHelpers.js';
+import { setOrDefault, isNullOrEmpty, toTitle } from './jsHelper.js';
 import { Report } from "./jsReport.js";
 
 //#region GLOBALS
